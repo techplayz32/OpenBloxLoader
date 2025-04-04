@@ -81,10 +81,10 @@ commits:
 	    - Patch Version
 
 # [BETA]
-#closes:
-#  # Lock an issue after the issue has been closed
-#  - action: lock
-#    delay: 0s
+closes:
+# Lock an issue after the issue has been closed
+  - action: lock
+    delay: 5s
   
 
 # [BETA] Labels that will be applied to issues/PRs when a sponsor opens them
