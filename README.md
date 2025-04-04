@@ -3,50 +3,50 @@
 > [!WARNING]
 > This project is still a work in progress (WIP). We **do not** recommend using it, as it may cause bugs, and this project was made purely for gaining skills in the `Go` language.
 
-Open-source bootstrapper for Roblox, written in `Go`. This is a **third-party** replacement for the standard Roblox bootstrapper, as well ***base project for developers*** to start making their own replacement of bootstrapper.
+Open-source bootstrapper for Roblox, written in `Go`. This is a **third-party** replacement for the standard Roblox bootstrapper, as well as a ***base project for developers*** to start making their own replacement bootstrapper.
 
-Running into a bug or problem? Please submit an issue on Git service platform that you are using right now, as we have two mirrors of this project.
+Running into a bug or problem? Please submit an issue on the Git service platform that you are using right now, as we maintain two mirrors of this project.
 
-# Mirrors
+## Mirrors
 
-We have two mirrors in case of situations like:
-- our repository getting nuked,
-- we will have one of them code files deleted
-or any other event.
+We maintain two mirrors for redundancy in case:
+- Our repository gets removed
+- Code files are deleted
+- Any other unforeseen events
 
-We decided on making like that:
+We provide two options:
 
-- for those people who like FOSS and want know what is written in Git service that they are using,
+- For those who prefer FOSS platforms and want to know what is in the Git service they're using:
 [Codeberg Mirror](https://codeberg.org/techplayz32/OpenBloxLoader)
 
-- for those people who are newbies and just want to download this bootstrapper,
+- For those who are new and just want to download the bootstrapper:
 [Github Mirror](https://github.com/techplayz32/OpenBloxLoader)
 
-We will planning on making Bugzilla bug tracker, but only when project will start becoming more popular.
-For workflows (building nightly versions of the project), we will be using Github mirror as the main one repository right now, but we will try to be active on Codeberg, since we prefer it more over Github.
+We plan to set up a Bugzilla bug tracker when the project becomes more popular.
+For workflows (building nightly versions of the project), we are currently using the Github mirror as the main repository, but we'll maintain activity on Codeberg as we prefer it over Github.
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 **Q: Is this malware?**
 
-**A:** Nope, our both of repositories would be immediately deleted off the platforms, as well we showing the source code of app, and **it'd be impossible to put malware in it without getting caught**.
+**A:** No. Our repositories would be immediately removed from both platforms if they contained malware. Additionally, we provide the complete source code, making it impossible to hide malicious code without detection.
 
-**Q: Then why my anti-virus says that it is a malware??!!**
+**Q: Why does my anti-virus flag it as malware?**
 
-**A:** Since we are not digitally signed.. and that would take a lot of money and time to digitally sign our executables.
+**A:** This happens because our executables are not digitally signed, which would require significant money and time to implement.
 
-**Q: Can using this get me banned?**
+**Q: Can using this get me banned from Roblox?**
 
-**A:** No, and probably it shouldn't. OpenBloxLoader doesn't do anything like putting exploits or anything suspicious which violating guidelines of Roblox.
+**A:** No, it shouldn't. OpenBloxLoader doesn't include exploits or any functionality that violates Roblox guidelines.
 
-# Features
+## Features
 
-None! I said that this project is in WIP lol
+None yet! As mentioned, this project is still a work in progress.
 
-# Installation
+## Installation
 
-Just grab the fresh one of releases, and run it. That's about it!
+Simply download the latest release and run it. That's all there is to it!
 
-# License
+## License
 
-OpenBloxLoader is open-source software licensed under MIT license, which contains the usage of [Fyne](https://github.com/fyne-io/fyne) library for user interface design.
+OpenBloxLoader is open-source software licensed under the MIT license. It uses the [Fyne](https://github.com/fyne-io/fyne) library for user interface design.
