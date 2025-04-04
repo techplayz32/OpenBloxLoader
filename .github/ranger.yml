@@ -31,7 +31,15 @@ labels:
   'new contributor':
     action: comment
     delay: 5s
-	  message: "Thanks for making your first contribution! :slightly_smiling_face:"  
+	  message: "Thanks for making your first contribution! :slightly_smiling_face:"
+  bug:
+    action: comment
+    delay: 5s
+    message: "Thanks for reporting this bug! Please wait until maintainer or other people will help you. :bug:"
+  remind:
+    action: comment
+    delay: 1d
+    message: "You asked me to remind you about this $DELAY ago."
 
 merges:
   # Delete branch after merging the PR
@@ -53,6 +61,13 @@ comments:
     # that include "+1" will be deleted. 
   - action: delete_comment
     pattern: "$PROFANITY" # can also be a regular expression
+
+  - action: label
+    pattern: /\/remind/i
+    labels: 
+      - remind
+  - action: delete_comment
+    pattern: /\/remind/i
 
 # Same as `comments` except Ranger will look in the body of new commits
 # that are pushed to a pull request
