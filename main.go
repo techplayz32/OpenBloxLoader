@@ -15,13 +15,16 @@ import (
 )
 
 const OBLversion = "0.1.0"
-const iconFileName = "images/Icon.png"
+
+// const iconFileName = "images/Icon.png" no longer needed
 
 func main() {
 	a := app.New()
+	a.SetIcon(resourceImagesIconPng)
 	// a.Settings().SetTheme(theme.DarkTheme()) deprecated in fyne v3
 	w := a.NewWindow("OpenBloxLoader")
 	w.SetMaster()
+	w.SetIcon(resourceImagesIconPng)
 
 	// --- Buttons (Right Side Content) ---
 	launchButton := widget.NewButtonWithIcon("Launch Roblox", theme.ConfirmIcon(), func() { installer.InstallRobloxPlayer() })
@@ -37,9 +40,9 @@ func main() {
 	)
 
 	// --- Left Side Content ---
-	customLogo := canvas.NewImageFromFile(iconFileName)
+	customLogo := canvas.NewImageFromResource(resourceImagesIconPng)
 	if customLogo == nil {
-		log.Printf("Error loading %s\n", iconFileName)
+		log.Printf("Error loading custom logo.")
 		customLogo = canvas.NewImageFromResource(theme.BrokenImageIcon())
 	}
 	customLogo.SetMinSize(fyne.NewSize(64, 64))
