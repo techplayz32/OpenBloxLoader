@@ -32,7 +32,7 @@ func InstallRobloxPlayer() {
 	url := ""
 	fmt.Println("downloading Roblox...")
 
-	// in case, if the one of the servers urls is not working, we can use one of the other servers, make a list of servers urls
+	// in case, if the one of the servers urls is not working, we can use one of the other servers,we will make a list of servers urls
 	// and iterate through them until we find one that works
 	servers := []string{
 		"https://setup.rbxcdn.com/",
@@ -50,12 +50,11 @@ func InstallRobloxPlayer() {
 
 	fmt.Println("Found version:", fetchedVersion)
 
-	// Initialize variables to track success
 	var manifestBody []byte
 	var manifestErr error
 	var successfulServer string
 
-	// Try each server until we get a successful response
+	// try each server until we get a successful response
 	for _, server := range servers {
 		manifestURL := server + fetchedVersion + "-rbxPkgManifest.txt"
 		fmt.Println("Trying manifest URL:", manifestURL)
@@ -72,7 +71,7 @@ func InstallRobloxPlayer() {
 			continue
 		}
 
-		// Read the response body
+		// read the response body
 		manifestBody, manifestErr = io.ReadAll(resp.Body)
 		resp.Body.Close()
 
@@ -90,20 +89,19 @@ func InstallRobloxPlayer() {
 		return
 	}
 
-	// Process the manifest content
 	bodyString := string(manifestBody)
 	fmt.Println("Manifest content:", bodyString)
 
-	// Get all filenames from manifest
+	// get all filenames from manifest
 	var filenames []string
 	lines := strings.Split(strings.TrimSpace(bodyString), "\n")
-	for i := 1; i < len(lines); i += 4 { // Каждый 4-й элемент - новый файл
+	for i := 1; i < len(lines); i += 4 {
 		if i < len(lines) {
 			filenames = append(filenames, strings.TrimSpace(lines[i]))
 		}
 	}
 
-	// Try each filename until we find a working URL
+	// try each filename until we find a working URL
 	for _, fname := range filenames {
 		fileURL := successfulServer + fetchedVersion + "-" + fname
 		fmt.Printf("Trying download URL: %s\n", fileURL)
@@ -124,41 +122,14 @@ func InstallRobloxPlayer() {
 	}
 
 	if url != "" {
-		// Check if URL needs to be prefixed with the server
+		// check if URL needs to be prefixed with the server
 		// if !strings.HasPrefix(strings.ToLower(url), "http") {
 		// 	url = successfulServer + url
 		// }
 
 		fmt.Printf("Download URL: %s\n", url)
 
-		// // Download the installer
-		// resp, err := http.Get(url)
-		// if err != nil {
-		// 	fmt.Println("Error downloading installer:", err)
-		// 	return
-		// }
-		// defer resp.Body.Close()
-
-		// if resp.StatusCode != http.StatusOK {
-		// 	fmt.Println("Error downloading installer, status:", resp.Status)
-		// 	return
-		// }
-
-		// // Create output file
-		// outFile, err := os.Create("RobloxPlayerInstaller.exe")
-		// if err != nil {
-		// 	fmt.Println("Error creating output file:", err)
-		// 	return
-		// }
-		// defer outFile.Close()
-
-		// // Copy the response body to the output file
-		// _, err = io.Copy(outFile, resp.Body)
-		// if err != nil {
-		// 	fmt.Println("Error saving installer:", err)
-		// 	return
-		// }
-
+		// soon will be new code lol not done yet
 		fmt.Println("Download completed successfully!")
 	} else {
 		fmt.Println("Could not find download URL in manifest")
