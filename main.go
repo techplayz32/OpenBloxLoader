@@ -16,10 +16,18 @@ import (
 
 const OBLversion = "0.1.0"
 
+var a = app.New()
+
 // const iconFileName = "images/Icon.png" no longer needed
 
+func loadingRoblox() {
+	w := a.NewWindow("OpenBloxLoader")
+	w.SetMaster()
+	w.SetIcon(resourceImagesIconPng)
+
+}
+
 func main() {
-	a := app.New()
 	a.SetIcon(resourceImagesIconPng)
 	// a.Settings().SetTheme(theme.DarkTheme()) deprecated in fyne v3
 	w := a.NewWindow("OpenBloxLoader")

@@ -236,7 +236,6 @@ func InstallRobloxPlayer() {
 		err = extractZip(localFilePath, extractDir)
 		if err != nil {
 			fmt.Printf("Extraction failed: %v\n", err)
-			// todo: continue from here
 			return
 		}
 

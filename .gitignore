@@ -55,3 +55,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Zip archives
+*.zip
+*.7z
+*.rar
+
